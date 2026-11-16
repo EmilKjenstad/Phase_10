@@ -1,2 +1,7 @@
-# Phase_10
-Designed by @dr3amscape
+# Phase 10
+
+## Routes
+
+- `/` redirects to `/setup`.
+- `/setup` displays player setup; **Start game** opens `/track`.
+- `/track` displays the game tracker.
