@@ -7,13 +7,13 @@ import { LabelBox } from "./PlayerInput.styles";
 interface PlayerInputProps {
   value: string
   onChange: (value: string) => void
-  onRemove: () => void
+  onRemove?: () => void
 }
 
 export const PlayerInput = ({ value, onChange, onRemove }: PlayerInputProps) => {
   return (
     <LabelBox>
-      <FiberManualRecordIcon color="success" />
+      <FiberManualRecordIcon color="success" sx={{ fontSize: 12 }} />
 
       <TextField
         variant="outlined"
@@ -23,9 +23,14 @@ export const PlayerInput = ({ value, onChange, onRemove }: PlayerInputProps) => 
         onChange={(e) => onChange(e.target.value)}
       />
 
-      <IconButton onClick={onRemove}>
-        <CloseIcon />
-      </IconButton>
+      {onRemove && (
+        <IconButton
+          onClick={onRemove}
+          sx={{ color: "#efaaa2", backgroundColor: "#30201f" }}
+        >
+          <CloseIcon />
+        </IconButton>
+      )}
     </LabelBox>
   )
 }

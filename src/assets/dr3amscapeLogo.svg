@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="155" height="108" viewBox="38 28 155 108" role="img" aria-labelledby="title description">
+  <title id="title">dr3amscape</title>
+  <desc id="description">A glowing green planet surrounded by pastel orbital rings and colorful stars above the dr3amscape wordmark.</desc>
+  <defs>
+    <linearGradient id="orbit" x1="80" y1="39" x2="150" y2="107" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#83dbb0"/>
+      <stop offset=".35" stop-color="#9d8bd8"/>
+      <stop offset=".7" stop-color="#e4a6cd"/>
+      <stop offset="1" stop-color="#74d2ac"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="60" y1="121" x2="172" y2="132" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#81dec6"/>
+      <stop offset=".34" stop-color="#b7c8f4"/>
+      <stop offset=".65" stop-color="#eda6dc"/>
+      <stop offset="1" stop-color="#f0cd83"/>
+    </linearGradient>
+    <radialGradient id="planet">
+      <stop stop-color="#b6ffe0" stop-opacity=".9"/>
+      <stop offset=".13" stop-color="#78d8b0" stop-opacity=".8"/>
+      <stop offset=".35" stop-color="#286c53" stop-opacity=".65"/>
+      <stop offset=".7" stop-color="#133328" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#080d0e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo">
+      <stop stop-color="#8ef4bf" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#8ef4bf" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <g id="star" fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d="M0-12V12M-12 0H12" stroke-width="2"/>
+      <path d="m-8-8 16 16M-8 8 8-8" stroke-width="1.5"/>
+      <circle r="2.4" fill="currentColor" stroke="none"/>
+    </g>
+  </defs>
+
+  <g fill="none" stroke-linecap="round">
+    <g stroke-width="1.3">
+      <path d="M115 29v8m0 72v8" stroke="#78d6b0"/>
+      <path d="m92 34 4 7m38 64 4 6" stroke="#d3c77a"/>
+      <path d="m78 51 7 4m60 36 7 4" stroke="#dd9ec6"/>
+      <path d="M70 73h8m74 0h8" stroke="#a599df"/>
+      <path d="m78 96 7-4m60-38 8-4" stroke="#6ccea6"/>
+      <path d="m93 110 4-7m37-62 4-7" stroke="#af9bde"/>
+      <path d="m84 42 4 5m54 51 5 5" stroke="#7ab8c5" opacity=".6"/>
+    </g>
+    <circle cx="115" cy="73" r="36" stroke="url(#orbit)" stroke-width="1.5"/>
+    <circle cx="115" cy="73" r="32" stroke="#8f80ba" stroke-width="1.2"/>
+    <circle cx="115" cy="73" r="28.5" stroke="#508e70" stroke-width=".8"/>
+    <path d="M99 48c15 2 32 20 34 36M89 85c9 12 23 16 36 10" stroke="#396b54" stroke-width=".7" opacity=".65"/>
+    <ellipse cx="115" cy="74" rx="22" ry="5.5" transform="rotate(-27 115 74)" stroke="#80b59a" stroke-width=".65" opacity=".65"/>
+  </g>
+
+  <circle cx="115" cy="73" r="25" fill="url(#planet)"/>
+  <ellipse cx="115" cy="73" rx="13" ry="8" transform="rotate(-30 115 73)" fill="url(#halo)" filter="url(#glow)"/>
+  <path d="m108 74 5-2 3-6 1 5 6 1-6 2-3 6v-5z" fill="#b1f5d2" opacity=".55"/>
+  <circle cx="115" cy="73" r="2" fill="#b9f4d8" opacity=".7"/>
+
+  <g>
+    <use href="#star" transform="translate(53 80)" color="#f0a3d8"/>
+    <use href="#star" transform="translate(53 103) scale(.7)" color="#77e1b5"/>
+    <use href="#star" transform="translate(178 81)" color="#8ce5ec"/>
+    <use href="#star" transform="translate(178 104) scale(.7)" color="#c0a3ef"/>
+    <g fill="none" stroke-linecap="round" stroke-width="2.5">
+      <path d="m49 86-7 9m15-9 7 6" stroke="#78ce92"/>
+      <path d="m174 87-7 9m15-8 8 8" stroke="#7bcc96"/>
+    </g>
+    <g fill="#e7b5d7">
+      <circle cx="42" cy="72" r="1.5"/>
+      <circle cx="40" cy="91" r="1.5"/>
+      <circle cx="165" cy="39" r=".9"/>
+    </g>
+    <g fill="#87d4c2">
+      <circle cx="66" cy="37" r=".8"/>
+      <circle cx="73" cy="90" r="1"/>
+      <circle cx="188" cy="72" r="1.3"/>
+    </g>
+    <g fill="#b29cde">
+      <circle cx="143" cy="30" r="1"/>
+      <circle cx="191" cy="94" r="1.4"/>
+    </g>
+    <circle cx="90" cy="32" r="1.5" fill="#e3ce85"/>
+  </g>
+
+  <text x="115" y="131" text-anchor="middle" fill="url(#wordmark)" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-style="italic" font-weight="700">dr3amscape</text>
+</svg>

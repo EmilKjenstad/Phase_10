@@ -1,32 +1,11 @@
 import { Button, Box, Card, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import { PlayerInput } from "../../components"
-import { useState } from "react"
+import { useGameConfig } from "../../providers/GameConfigContext"
+import dr3amscapeLogo from "../../assets/dr3amscapeLogo.svg"
 
 export const GameSetup = () => {
-  const [players, setPlayers] = useState(() => [
-    { id: crypto.randomUUID(), name: "" },
-    { id: crypto.randomUUID(), name: "" },
-  ])
-
-  const addPlayer = () => {
-    const player = { id: crypto.randomUUID(), name: "" }
-    setPlayers((currentPlayers) => [...currentPlayers, player])
-  }
-
-  const updatePlayer = (id: string, value: string) => {
-    setPlayers((currentPlayers) =>
-      currentPlayers.map((player) =>
-        player.id === id ? { ...player, name: value } : player
-      )
-    )
-  }
-
-  const deletePlayer = (id: string) => {
-    setPlayers((currentPlayers) =>
-      currentPlayers.filter((player) => player.id !== id)
-    )
-  }
+  const { config: { players }, addPlayer, updatePlayer, deletePlayer } = useGameConfig()
 
   return (
     <Box
@@ -35,13 +14,30 @@ export const GameSetup = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        bgcolor: "background.default",
         p: 3,
       }}
     >
-      <Box sx={{ width: "100%", maxWidth: 360 }}>
-        <Typography align="center" sx={{ mb: 3 }}>
-          Phase 10 * Game Tracker
+
+      <Box sx={{ gap: 2, display: "flex", flexDirection: "column", width: "100%", maxWidth: 360 }}>
+        <Box
+          component="img"
+          src={dr3amscapeLogo}
+          alt="dr3amscape - Phase 10 Game Tracker"
+          sx={{ display: "block", width: "50%", margin: "0 auto", height: "auto" }}
+        />
+
+        <Typography
+          variant="caption"
+          align="center"
+          sx={{
+            mb: 3,
+            color: "#9184b6",
+            fontSize: "0.6875rem",
+            fontWeight: 700,
+            letterSpacing: "0.15em",
+          }}
+        >
+          PHASE 10 - GAME TRACKER
         </Typography>
 
         <Card
@@ -63,7 +59,7 @@ export const GameSetup = () => {
               key={player.id}
               value={player.name}
               onChange={(value) => updatePlayer(player.id, value)}
-              onRemove={() => deletePlayer(player.id)}
+              onRemove={players.length > 2 ? () => deletePlayer(player.id) : undefined}
             />
           ))}
 
@@ -74,7 +70,13 @@ export const GameSetup = () => {
           )}
         </Card>
 
-        <Button component={Link} to="/track" variant="contained" fullWidth >
+        <Button
+          component={Link}
+          to="/track"
+          variant="contained"
+          disabled={players.some((player) => !player.name)}
+          fullWidth
+        >
           Start game
         </Button>
       </Box>
