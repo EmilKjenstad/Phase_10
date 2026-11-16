@@ -92,11 +92,17 @@ export const defaultTheme = createTheme({
             borderColor: "#b5a7df",
           },
         },
-        containedPrimary: {
+        contained: {
+          minHeight: 44,
+          fontWeight: 700,
           backgroundColor: "#1b3025",
           color: "#c6b8eb",
-          "&:hover": {
-            backgroundColor: "#284535",
+          "&.MuiButton-colorPrimary:not(.Mui-disabled)": {
+            backgroundImage: "linear-gradient(110deg, #76e3c2 0%, #c7b5f5 65%, #f2aad9 100%)",
+            color: "#080d0e",
+          },
+          "&.MuiButton-colorPrimary:hover:not(.Mui-disabled)": {
+            backgroundImage: "linear-gradient(110deg, #8ce9ce 0%, #d2c3f8 65%, #f5bce2 100%)",
           },
         },
       },

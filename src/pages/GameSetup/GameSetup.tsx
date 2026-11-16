@@ -77,7 +77,7 @@ export const GameSetup = () => {
           disabled={players.some((player) => !player.name)}
           fullWidth
         >
-          Start game
+          Start Game
         </Button>
       </Box>
     </Box>
